@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Calculator</title>
+</head>
+<body>
+
+<form id="calculatorForm">
+  <!-- Input for left operand -->
+  <input type="text" id="leftOperand" placeholder="Left operand" required>
+  <!-- Dropdown for operator selection -->
+  <select id="operator" required>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <!-- Input for right operand -->
+  <input type="text" id="rightOperand" placeholder="Right operand" required>
+  <!-- Submit button -->
+  <input type="submit" value="Try me!">
+</form>
+
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+  // Function to perform calculation
+  function calculate() {
+    // Retrieve values from inputs
+    const leftOperand = $("#leftOperand").val().trim();
+    const rightOperand = $("#rightOperand").val().trim();
+    const operator = $("#operator").val();
+
+    // Check if inputs contain both number and text
+    if ((isNaN(leftOperand) && !isNaN(rightOperand)) || (!isNaN(leftOperand) && isNaN(rightOperand))) {
+      alert('Error: Please enter either text or numbers in both fields.');
+      return;
+    }
+
+    // Convert operands to numbers if they are numeric
+    const leftOperandValue = isNaN(leftOperand) ? leftOperand : parseInt(leftOperand);
+    const rightOperandValue = isNaN(rightOperand) ? rightOperand : parseInt(rightOperand);
+
+    // Check if inputs are valid positive integers
+    if (leftOperand === "" || rightOperand === "" || isNaN(leftOperand) || isNaN(rightOperand) || leftOperand < 0 || rightOperand < 0) {
+      alert('Error :(');
+      return;
+    }
+
+    // Variable to store result
+    let result;
+    // Perform calculation based on selected operator
+    switch (operator) {
+      case '+':
+        result = leftOperandValue + rightOperandValue;
+        break;
+      case '-':
+        result = leftOperandValue - rightOperandValue;
+        break;
+      case '*':
+        result = leftOperandValue * rightOperandValue;
+        break;
+      case '/':
+        // Check for division by zero
+        if (rightOperandValue === 0) {
+          alert("It's over 9000!");
+          return;
+        }
+        result = leftOperandValue / rightOperandValue;
+        break;
+      case '%':
+        // Check for modulo by zero
+        if (rightOperandValue === 0) {
+          alert("It's over 9000!");
+          return;
+        }
+        result = leftOperandValue % rightOperandValue;
+        break;
+      default:
+        alert('Invalid operator');
+        return;
+    }
+
+    // Display result in console and alert
+    console.log("Result:", result);
+    alert("Result: " + result);
+  }
+
+  // Event handler for form submission
+  $("#calculatorForm").on("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    calculate(); // Call calculate function
+  });
+
+  // Alert every 30 seconds
+  setInterval(function() {
+    alert("Please, use me...");
+  }, 30000);
+});
+</script>
+
+</body>
+</html>

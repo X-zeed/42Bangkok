@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0; /*ไม่ใช้มาจิ้น*/
+    padding: 0; /*งดเติมพื้นที่เพิ่ม*/
+    box-sizing: border-box; /*กำหนดการคำนวณขนาดขององค์ประกอบโดยคำนึงถึงขอบเขตและขอบขององค์ประกอบ (border-box) เพื่อให้การคำนวณขนาดเป็นไปอย่างเหมาะสม*/
+    text-decoration: none; /*ลบการเพิ่มเส้นใต้ (text-decoration) เพื่อยกเลิกการสร้างเส้นใต้ในลิงก์หรือข้อความที่เป็นลิงก์*/
+    border: none; /*ไม่กำหนดขอบ*/
+    outline: none; /*ลบเส้นขอบรอบ*/
+    scroll-behavior: smooth; /*เลื่อนหน้าเว็บนุ่มๆ*/
+}
+
+.header {
+    position: fixed;  /*ตัวล้อกเฮนเด้อ ให้เครื่องไปตามจอ*/
+    top: 0; /*ใส่ปุ้บอยู่บนสุดเสมอ*/
+    left: 0; /*ซ้ายสุด*/
+    width: 100%;
+    padding: 1rem; /*rem=root em  16px = 1rem เพิ่มระยะห่างกรอบ*/
+    background: rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(58, 97, 225);
+    font-family: "Poppins", sans-serif;
+    display: flex; /*flexbox*/
+    justify-content: space-between; /*คุนนะสมบัตจัดวางเฟ้กบ้อก เรียง*/
+    align-items: center; /*จุดกึ่งกลางขอบบนถึงล่าง นอนกลาง*/
+    z-index: 100; /*ความสูงลึก*/
+}
+
+.logo {
+    font-size: 2rem;
+    color: rgb(18, 73, 255);
+    font-weight: 600;
+    cursor: pointer; /*เอาเมาส์ชี้เเล้วขึ้นให้กด*/
+    transition: 0.3s ease;
+}
+
+.navbar {
+    display: flex; /*ให้เว้บยืดหยุ่น*/
+}
+
+.navbar h{
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.navbar i{
+    font-size: 1rem;
+    color: #df5151;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    margin-top: 1rem; /*ระยะของขอบ*/
+    margin-left: 1rem;
+    font-weight: 500;
+    transition: 0.3s ease; /*ease คือการเคลื่อนไหวเรียบๆ ตอนมีกานรเปี่ยนแปลงนุ่มนวล*/
+    border-bottom: 3px solid transparent; /*ให้โปร่งใส หรือไม่มีสีที่แสดง*/
+} /*solid รูปแบบของเส้นขอบ เป้นเส้น ประ ก้ dotted อะไรว้าไป*/
+
+
+.navbar a.bill {
+    font-size: 15px;
+    margin-left: 1rem;
+    margin-top: 3px;
+    border-bottom: 3px solid transparent;
+    background-color: #000000;
+    border-radius: 20%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar a.active {
+    font-size: 15px;
+    margin-left: 1rem;
+    margin-top: 3px;
+    border-bottom: 3px solid transparent;
+    background-color: #007bff;
+    border-radius: 20%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar a.bill:hover { /*โฮเวอร์ คือเมื่อเอาเมาส์ไปชี้*/
+    border-radius: 25%; /*รัศมี ความมล ความกลม*/
+    border: 3px solid rgb(202, 202, 202);
+}
+
+.navbar a.active:hover {
+    border-radius: 25%;
+    border: 3px solid rgb(202, 202, 202);
+}
+
+.navbar a:hover {
+    color: rgb(8, 73, 255);
+    border-bottom: 3px solid rgb(18, 73, 255);
+}
+
+
+section{
+    padding: 10rem 9% 10rem; /*บน10rem ข้างซ้ายขวา 9 เปอ ล่าง10rem*/
+}
+
+span{
+    color: blue;
+}
+
+span1{
+    color: rgb(255, 255, 255);
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*ตัวจัดวาง column คือจัดวางแกนหลักเป็นแนวตั้ง*/
+}
+.home-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Athiti", sans-serif;
+    font-weight: 200;
+}
+.home-content h3{
+    font-size: 2rem;
+    font-weight: 300;
+}
+.home-content h1{
+    font-size: 3rem;
+}
+
+.home-img img {
+    position: relative;
+    cursor: pointer;
+    width: 17rem;
+    max-width: 100%; 
+    height: auto; /*ตามไฟล์ภาพ*/
+    border-radius: 50%; 
+}
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(78, 161, 255, 0.871);
+    font-family: "Athiti", sans-serif;   
+}
+
+
+.about-content{
+    max-width: 800%;
+    margin: 50px;
+    background-color: #fff;
+    padding: 20px;  
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /*ช่องแรก 0 แกนx ช่องสอง 0 แกนy ช่องสามคือ รัศมีของเงา*/
+    font-family: "Athiti", sans-serif; 
+    
+}
+
+.about-content h2{
+    font-size: 5rem;
+    color: rgb(255, 168, 168);
+    font-family: "Athiti", sans-serif;
+    font-weight: 1000;
+
+}
+
+.about-content h3{
+    color: rgb(255, 142, 142);
+    font-family: "Athiti", sans-serif;
+    font-weight: 500;
+
+}
+
+.about img{
+    position: relative; /*คือต่ำแหน่งเริ่มต้น*/
+    width: 30%;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    max-width: 800%; 
+    margin: 50px;
+    background-color: #fff;
+    padding: 20px;  
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: "Athiti", sans-serif; 
+}
+
+.info {
+    text-align: center; 
+}
+
+.info li {
+    list-style: none; 
+    margin-bottom: 10px; 
+}
+
+
+.container span{
+    color: rgb(0, 64, 255);
+    font-family: "Athiti", sans-serif;
+    font-weight: 900;
+}
+
+.container li{
+    color: rgb(0, 0, 0);
+    font-family: "Athiti", sans-serif;
+    font-weight: 900;
+}
+
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.certificate {
+    text-align: center;
+}
+.certificate h2 {
+    font-family: "Athiti", sans-serif;
+    margin-top: 0;
+    font-size: 32px;
+    color: #007bff;
+}
+.certificate h3{
+    font-family: "Athiti", sans-serif;
+}
+.certificate p {
+    font-family: "Athiti", sans-serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+.signature {
+    height: 20rem;
+    width: 26rem;
+    border-radius: 1rem;
+    margin: 2rem;
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบเขต container1*/
+    cursor: pointer;
+}
+
+.signature p {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #007bff;
+}
+
+.signature h2 {
+    margin-top: 0;
+    font-size: 32px;
+    color: #007bff;
+}
+.signature img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /*ตัวปรับขนาดให้แสดงขนาดพอกับที่ แสดงผลเน้อ*/
+}
+.signature:hover {
+    transform: translateY(-5px); /* ขยับตัวที่จะให้ขยับขึ้นไป 5px  */
+}
+
+
+.contacticon {
+    font-family: "Athiti", sans-serif; 
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-icon {
+    text-align: center;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-icon:hover {
+    transform: translateY(-10px);
+}
+
+.contact-icon i {
+    font-size: 36px;
+    color: #ff5900;
+    margin-bottom: 10px;
+}
+
+.contact-icon F {
+    font-size: 36px;
+    color: #0062ff;
+    margin-bottom: 10px;
+}
+.contact-icon e {
+    font-size: 36px;
+    color: #ff4343;
+    margin-bottom: 10px;
+}
+
+.contact-icon c {
+    font-size: 36px;
+    color: #00c20d;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.contact-icon p {
+    font-family: "Athiti", sans-serif;
+    font-size: 16px;
+    color: #000000;
+    margin: 0;
+}
+
+.contact-icon g {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.contact-icon d {
+    font-size: 36px;
+    color: #000000;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .home-img img {
+        max-width: 70%; 
+    }
+    .about-content {
+        margin-right: 0;
+    }
+}
+@media (max-width: 1080px) {  /*ตัน 1080 จะทำงานใน css ที่เราเขียน*/
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none; 
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 4rem; 
+        left: 0;
+        width: 100%;
+        background-color: rgb(255, 255, 255); 
+        padding: 1rem;
+        border-bottom: 5px solid rgb(58, 97, 225); 
+        z-index: 99; /*ความสูงลึก*/
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin-left: 0;
+        margin-bottom: 1rem; 
+    }
+
+    .logo {
+        margin-left: 1rem; 
+    }
+}
